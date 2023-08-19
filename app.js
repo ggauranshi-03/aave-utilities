@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const Aave = require("./api/routes/aave.js");
+const Trade = require("./api/routes/trade.js");
 // import router from "./api/routes/aave.js";
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use((req,res,next)=>{
 });
 
 app.use("/",Aave);
+app.use("/trade",Trade);
 
 app.use((req,res,next)=>{
     const error = new Error('Not found');
