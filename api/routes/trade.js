@@ -6,7 +6,7 @@ const TradeControllers = require("../controllers/trade.js");
 //     res.send("hello");
 // })
 router.get("/tokens",TradeControllers.Tokens);
-router.get("/quote",TradeControllers.Quote);
+router.post("/quote",TradeControllers.Quote);
 
 module.exports = router;
 // export default router;
