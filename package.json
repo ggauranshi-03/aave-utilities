@@ -7,31 +7,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "clean": "rimraf coverage && lerna run clean",
-    "lint": "lerna run lint",
-    "lint:fix": "lerna run lint -- --fix",
-    "lint:staged": "lint-staged",
-    "check-types": "lerna run check-types",
-    "build": "lerna run build",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "precover": "rimraf coverage",
-    "cover": "jest --coverage",
-    "commit": "git-cz",
-    "release:check": "lerna changed",
-    "release:latest": "lerna publish --yes --conventional-commits --create-release github --message 'chore(release): publish [ci skip]'",
-    "release:canary": "lerna publish --canary --ignore-scripts",
-    "prepare": "husky install"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional",
-      "@commitlint/config-lerna-scopes"
-    ]
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {
     "commitizen": {
@@ -40,15 +16,6 @@
   },
   "release": {
     "branch": "master"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,yaml}": [
-      "prettier --write"
-    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
@@ -86,6 +53,7 @@
     "dotenv": "^16.3.1",
     "ethers": "^5.0.0",
     "express": "^4.18.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
   }
 }
